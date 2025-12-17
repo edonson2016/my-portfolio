@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { User, Briefcase, Award, Menu, X } from 'lucide-react';
+import EdwardPic from "./assets/Edward_ResearchPic.png";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('about');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [isVisible, setIsVisible] = useState(false); // controls DOM + CSS
+
+  const openPopup = () => {
+    setIsVisible(true);
+    setTimeout(() => setShowPopup(true), 10); // small delay to trigger transition
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setTimeout(() => setIsVisible(false), 500); // wait for fade-out duration
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +48,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-slate-100'>
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full bg-white shadow-md z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +121,7 @@ export default function Portfolio() {
               {/* Headshot */}
               <div className="flex justify-center">
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 shadow-2xl flex items-center justify-center overflow-hidden">
-                  <img src="Edward_ResearchPic.png" alt="Your Name" className="w-full h-full object-cover" />
+                  <img src={EdwardPic} alt="Your Name" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -117,16 +130,33 @@ export default function Portfolio() {
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
                   Hi, I'm Edward
                 </h1>
-                {/* <h2 className="text-xl md:text-2xl text-blue-600 mb-6">
-                  Joint CS/Math Major Harvey Mudd College 26'
-                </h2> */}
-                {/* <p className="text-lg text-slate-600 leading-relaxed mb-4">
-                  
-                </p> */}
                 <div className="mt-8 flex space-x-4">
-                  <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" 
+                  onClick={openPopup}>
                     Contact Me
                   </button>
+                  {isVisible && (
+                    <div
+                      className={`fixed inset-0 max-w-full overflow-x-hidden flex items-center justify-center transition-opacity duration-500 ${
+                        showPopup ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                    <div
+                      className={`bg-white p-6 rounded-lg shadow-lg w-80 transition-transform duration-5000 ${
+                        showPopup ? "scale-100" : "scale-95"
+                      }`}
+                    >
+                      <h3 className="font-bold text-lg mb-2">Contact Info</h3>
+                      <p>Email: edonson2016@gmail.com</p>
+                      <button
+                        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                        onClick={closePopup}
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                )}
                   <button className="px-6 py-3 border-2 border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors">
                     Download CV
                   </button>
