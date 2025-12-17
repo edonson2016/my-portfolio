@@ -40,7 +40,7 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full bg-white shadow-md z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-2xl font-bold text-slate-800">Your Name</div>
+            <div className="text-2xl font-bold text-slate-800">Edward Donson</div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
@@ -108,9 +108,7 @@ export default function Portfolio() {
               {/* Headshot */}
               <div className="flex justify-center">
                 <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 shadow-2xl flex items-center justify-center overflow-hidden">
-                  <User size={120} className="text-white" />
-                  {/* Replace the User icon with your actual image:
-                  <img src="your-photo.jpg" alt="Your Name" className="w-full h-full object-cover" /> */}
+                  <img src="Edward_ResearchPic.png" alt="Your Name" className="w-full h-full object-cover" />
                 </div>
               </div>
 
