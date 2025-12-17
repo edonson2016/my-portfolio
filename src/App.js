@@ -117,19 +117,14 @@ export default function Portfolio() {
               {/* Description */}
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-                  Hi, I'm Your Name
+                  Hi, I'm Edward
                 </h1>
-                <h2 className="text-xl md:text-2xl text-blue-600 mb-6">
-                  Your Professional Title
-                </h2>
-                <p className="text-lg text-slate-600 leading-relaxed mb-4">
-                  Welcome to my portfolio! I'm a passionate professional with expertise in [your field]. 
-                  I love creating innovative solutions and collaborating with teams to bring ideas to life.
-                </p>
-                <p className="text-lg text-slate-600 leading-relaxed">
-                  With a background in [your background], I specialize in [your specializations]. 
-                  I'm always eager to take on new challenges and continue growing in my field.
-                </p>
+                {/* <h2 className="text-xl md:text-2xl text-blue-600 mb-6">
+                  Joint CS/Math Major Harvey Mudd College 26'
+                </h2> */}
+                {/* <p className="text-lg text-slate-600 leading-relaxed mb-4">
+                  
+                </p> */}
                 <div className="mt-8 flex space-x-4">
                   <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                     Contact Me
