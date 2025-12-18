@@ -7,6 +7,8 @@ export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [isVisible, setIsVisible] = useState(false); // controls DOM + CSS
+  const [isEdHover, setIsEdHover] = useState(false);
+  const [isEdVisible, setIsEdVisible] = useState(false);
 
   const openPopup = () => {
     setIsVisible(true);
@@ -16,6 +18,16 @@ export default function Portfolio() {
   const closePopup = () => {
     setShowPopup(false);
     setTimeout(() => setIsVisible(false), 500); // wait for fade-out duration
+  };
+
+  const ExpandEd = () => {
+    setIsEdVisible(true);
+    setTimeout(() => setIsEdHover(true), 5); // small delay to trigger transition
+  };
+
+  const CloseEd = () => {
+    setIsEdHover(false);
+    setTimeout(() => setIsEdVisible(false), 250); // wait for fade-out duration
   };
 
   useEffect(() => {
@@ -157,9 +169,13 @@ export default function Portfolio() {
                     </div>
                   </div>
                 )}
-                  <button className="px-6 py-3 border-2 border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors">
+                  <a
+                    href="/Edward_Donson_CV.pdf"
+                    download
+                    className="px-6 py-3 border-2 border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors inline-block"
+                  >
                     Download CV
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -174,29 +190,26 @@ export default function Portfolio() {
               <h2 className="text-4xl font-bold text-slate-800">Qualifications</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-1 gap-8">
               {/* Education Card */}
-              <div className="bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className={`bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-xl
+                              transition-[max-height] duration-250 ease-in-out
+                              overflow-hidden
+                              ${isEdHover ? "max-h-[500px]" : "max-h-[140px]"}`}
+              onMouseEnter={ExpandEd}
+              onMouseLeave={CloseEd}>
                 <h3 className="text-2xl font-semibold text-slate-800 mb-2">
-                  Degree Name
+                  Joint Computer Science and Mathematics Major
                 </h3>
-                <p className="text-blue-600 font-medium mb-2">University Name</p>
-                <p className="text-slate-600 mb-4">2018 - 2022</p>
-                <p className="text-slate-700">
+                <p className="text-blue-600 font-medium mb-2">Harvey Mudd College</p>
+                <p className="text-slate-600 mb-4">2022 - 2026</p>
+                {isEdVisible && <p
+                  className={`text-slate-700 transition-opacity duration-250 ease-in-out ${
+                    isEdHover ? "opacity-100" : "opacity-0"
+                  }`}
+                >
                   Description of your degree, major achievements, relevant coursework, or honors received.
-                </p>
-              </div>
-
-              {/* Certification Card */}
-              <div className="bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-2xl font-semibold text-slate-800 mb-2">
-                  Certification Name
-                </h3>
-                <p className="text-blue-600 font-medium mb-2">Issuing Organization</p>
-                <p className="text-slate-600 mb-4">2023</p>
-                <p className="text-slate-700">
-                  Details about the certification, skills gained, or projects completed as part of the certification.
-                </p>
+                </p>}
               </div>
 
               {/* Skills Card */}
@@ -282,9 +295,8 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-slate-300">© 2024 Your Name. All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-6">
-            <a href="#" className="text-slate-300 hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="text-slate-300 hover:text-white transition-colors">GitHub</a>
-            <a href="#" className="text-slate-300 hover:text-white transition-colors">Email</a>
+            <a href="https://www.linkedin.com/in/edward-donson/" className="text-slate-300 hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://github.com/edonson2016" className="text-slate-300 hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
       </footer>
