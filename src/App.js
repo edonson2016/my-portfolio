@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { User, Briefcase, Award, Menu, X } from 'lucide-react';
 import EdwardPic from "./assets/Edward_ResearchPic.png";
+import SkillCard from './components/SkillCard';
+import JobCard from './components/JobCard';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('about');
@@ -22,7 +24,7 @@ export default function Portfolio() {
 
   const ExpandEd = () => {
     setIsEdVisible(true);
-    setTimeout(() => setIsEdHover(true), 5); // small delay to trigger transition
+    setTimeout(() => setIsEdHover(true), 0); // small delay to trigger transition
   };
 
   const CloseEd = () => {
@@ -58,6 +60,12 @@ export default function Portfolio() {
       setMobileMenuOpen(false);
     }
   };
+
+//   const skills = [
+//   "JavaScript",
+//   "React",
+//   "Python",
+// ];
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 to-slate-100'>
@@ -203,25 +211,33 @@ export default function Portfolio() {
                 </h3>
                 <p className="text-blue-600 font-medium mb-2">Harvey Mudd College</p>
                 <p className="text-slate-600 mb-4">2022 - 2026</p>
-                {isEdVisible && <p
+                {isEdVisible && <div
                   className={`text-slate-700 transition-opacity duration-250 ease-in-out ${
                     isEdHover ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  Description of your degree, major achievements, relevant coursework, or honors received.
-                </p>}
+                <h3 class="text-purple-600 font-semibold">Relevant Coursework:</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2 list-disc list-inside">
+                  <li>Data Structures & Algorithms</li>
+                  <li>Linear Algebra</li>
+                  <li>Intermediate Probability</li>
+                  <li>Math Methods in Data Science</li>
+                  <li>Multivariable Calculus</li>
+                  <li>Stochastic Processes</li>
+                  <li>Operations Research</li>
+                  <li>Mathematical Analysis</li>
+                  <li>Network Algorithmics</li>
+                </ul>
+                </div>
+                }
               </div>
 
               {/* Skills Card */}
-              <div className="bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow md:col-span-2">
-                <h3 className="text-2xl font-semibold text-slate-800 mb-4">Skills</h3>
-                <div className="flex flex-wrap gap-3">
-                  {['JavaScript', 'React', 'Python', 'Node.js', 'SQL', 'Git', 'AWS', 'Project Management'].map(skill => (
-                    <span key={skill} className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="grid md:grid-cols-2 gap-6">
+              <SkillCard title="Languages" skills={["Java", "Python", "C++", "JavaScript", "HTML/CSS", "R", "SQL"]} />
+              <SkillCard title="Frameworks" skills={["React", "Node.js", "Flutter", "MySQL", "MongoDB"]} />
+              <SkillCard title="Developer Tools" skills={["Git", "VS Code", "Eclipse", "Linux/UNIX", "Apache", "Docker"]} />
+              <SkillCard title="Packages" skills={["pandas", "NumPy", "Matplotlib", "ASE", "PyTorch", "scikit-learn", "rJAGS"]} />
               </div>
             </div>
           </div>
@@ -237,54 +253,10 @@ export default function Portfolio() {
 
             <div className="space-y-8">
               {/* Experience Item */}
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-blue-600">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-semibold text-slate-800">Job Title</h3>
-                    <p className="text-blue-600 font-medium text-lg">Company Name</p>
-                  </div>
-                  <p className="text-slate-600 mt-2 md:mt-0">Jan 2023 - Present</p>
-                </div>
-                <ul className="space-y-2 text-slate-700">
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">•</span>
-                    Led development of key features that improved user engagement by 30%
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">•</span>
-                    Collaborated with cross-functional teams to deliver projects on time
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">•</span>
-                    Mentored junior developers and conducted code reviews
-                  </li>
-                </ul>
-              </div>
+              <JobCard title="A" company_name="A" date="A" bullets={['A']} color='purple' />
 
               {/* Experience Item */}
-              <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-l-4 border-purple-600">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-semibold text-slate-800">Previous Job Title</h3>
-                    <p className="text-purple-600 font-medium text-lg">Previous Company</p>
-                  </div>
-                  <p className="text-slate-600 mt-2 md:mt-0">Jun 2021 - Dec 2022</p>
-                </div>
-                <ul className="space-y-2 text-slate-700">
-                  <li className="flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
-                    Developed and maintained multiple client-facing applications
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
-                    Implemented responsive designs and improved site performance
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
-                    Participated in agile development processes and sprint planning
-                  </li>
-                </ul>
-              </div>
+              <JobCard title="A" company_name="A" date="A" bullets={['A']} />
             </div>
           </div>
         </section>
