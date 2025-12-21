@@ -87,7 +87,7 @@ export default function Portfolio() {
                   onClick={() => scrollToSection(id)}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
                     activeSection === id
-                      ? 'text-blue-600 bg-blue-50'
+                      ? 'text-slate-600 bg-slate-200'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                 >
@@ -119,7 +119,7 @@ export default function Portfolio() {
                   onClick={() => scrollToSection(id)}
                   className={`w-full flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
                     activeSection === id
-                      ? 'text-blue-600 bg-blue-50'
+                      ? 'text-slate-700 bg-slate-200'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                   }`}
                 >
@@ -135,23 +135,21 @@ export default function Portfolio() {
       {/* Main Content */}
       <div className="pt-16">
         {/* About Section */}
-        <section id="about" className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8">
+        <section id="about" className="relative min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8">
+          <div className="absolute -top-32 -left-32 w-96 h-96 bg-green-300/30 rounded-full blur-3xl" />
           <div className="max-w-6xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Headshot */}
-              <div className="flex justify-center">
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 shadow-2xl flex items-center justify-center overflow-hidden">
-                  <img src={EdwardPic} alt="Your Name" className="w-full h-full object-cover" />
-                </div>
-              </div>
 
               {/* Description */}
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-                  Hi, I'm Edward
+                  Hi, I'm{" "}
+                    <span className="font-cursive">
+                      Edward
+                    </span>
                 </h1>
                 <div className="mt-8 flex space-x-4">
-                  <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" 
+                  <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors" 
                   onClick={openPopup}>
                     Contact Me
                   </button>
@@ -169,7 +167,7 @@ export default function Portfolio() {
                       <h3 className="font-bold text-lg mb-2">Contact Info</h3>
                       <p>Email: edonson2016@gmail.com</p>
                       <button
-                        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                        className="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
                         onClick={closePopup}
                       >
                         Close
@@ -180,12 +178,22 @@ export default function Portfolio() {
                   <a
                     href="/Edward_Donson_CV.pdf"
                     download
-                    className="px-6 py-3 border-2 border-slate-300 text-slate-700 rounded-lg hover:border-slate-400 transition-colors inline-block"
+                    className="px-6 py-3 border-2 border-green-300 text-gray-500 rounded-lg hover:border-green-400 transition-colors inline-block"
                   >
                     Download CV
                   </a>
                 </div>
               </div>
+
+              <div className="flex justify-center">
+                <p className='text-slate-800 font-bold'>
+                  Who am I....?
+                </p>
+                {/* <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 shadow-2xl flex items-center justify-center overflow-hidden">
+                  <img src={EdwardPic} alt="Your Name" className="w-full h-full object-cover" />
+                </div> */}
+              </div>
+
             </div>
           </div>
         </section>
@@ -194,7 +202,7 @@ export default function Portfolio() {
         <section id="qualifications" className="min-h-screen bg-white py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center mb-12">
-              <Award className="text-blue-600 mr-4" size={40} />
+              <Award className="text-slate-600 mr-4" size={40} />
               <h2 className="text-4xl font-bold text-slate-800">Qualifications</h2>
             </div>
 
@@ -209,14 +217,14 @@ export default function Portfolio() {
                 <h3 className="text-2xl font-semibold text-slate-800 mb-2">
                   Joint Computer Science and Mathematics Major
                 </h3>
-                <p className="text-blue-600 font-medium mb-2">Harvey Mudd College</p>
+                <p className="text-green-600 font-medium mb-2">Harvey Mudd College</p>
                 <p className="text-slate-600 mb-4">2022 - 2026</p>
                 {isEdVisible && <div
                   className={`text-slate-700 transition-opacity duration-250 ease-in-out ${
                     isEdHover ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                <h3 class="text-purple-600 font-semibold">Relevant Coursework:</h3>
+                <h3 class="text-green-700 font-semibold">Relevant Coursework:</h3>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2 list-disc list-inside">
                   <li>Data Structures & Algorithms</li>
                   <li>Linear Algebra</li>
@@ -237,7 +245,7 @@ export default function Portfolio() {
               <SkillCard title="Languages" skills={["Java", "Python", "C++", "JavaScript", "HTML/CSS", "R", "SQL"]} />
               <SkillCard title="Frameworks" skills={["React", "Node.js", "Flutter", "MySQL", "MongoDB"]} />
               <SkillCard title="Developer Tools" skills={["Git", "VS Code", "Eclipse", "Linux/UNIX", "Apache", "Docker"]} />
-              <SkillCard title="Packages" skills={["pandas", "NumPy", "Matplotlib", "ASE", "PyTorch", "scikit-learn", "rJAGS"]} />
+              <SkillCard title="Packages" skills={["pandas", "NumPy", "Matplotlib", "ASE", "PyTorch", "scikit-learn", "rJAGS", "Open3D"]} />
               </div>
             </div>
           </div>
@@ -247,28 +255,42 @@ export default function Portfolio() {
         <section id="experience" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center mb-12">
-              <Briefcase className="text-blue-600 mr-4" size={40} />
+              <Briefcase className="text-slate-600 mr-4" size={40} />
               <h2 className="text-4xl font-bold text-slate-800">Experience</h2>
             </div>
 
             <div className="space-y-8">
               {/* Experience Item */}
-              <JobCard title="A" company_name="A" date="A" bullets={['A']} color='purple' />
+              <JobCard title="Software Engineer" 
+                company_name="Sokil Inc." 
+                date="Aug. 2025 - Present" 
+                location = "Claremont, CA"
+                bullets={[' Developing software to extract LiDAR and IMU data from proprietary file .lvx file type',
+                  'Leveraging eigenvalue-based curvature metrics to discern landmine presence in LiDAR scans, employing clustering and feature detection to highlight potential landmines and remove extraneous data points']} 
+                skills_used={["Linux/UNIX", "Open3D"]}
+                color='green' />
 
-              {/* Experience Item */}
-              <JobCard title="A" company_name="A" date="A" bullets={['A']} />
+              <JobCard title="Adversarial Machine Learning Research Intern" 
+                company_name="Center for Artificial Intelligence Security Research, Oak Ridge National Laboratory" 
+                principal_inv = "Dr. Amir Sadovnik" 
+                date="May. 2025– Aug. 2025" 
+                location="Oak Ridge, TN"
+                bullets={[' Developed extraction attack methods which leverage finetuned pre-trained vision models to produce transferable evasion attacks for a select target image',
+                  'Leveraged hessian analysis and loss surface visualization methods to theoretically validate extraction attack effectiveness, ensuring extraction attacks properly mimic target model loss surfaces']} 
+                skills_used={["PyTorch", "NumPy", "Python"]}
+                color='green' />
             </div>
           </div>
         </section>
       </div>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-white py-8 px-4">
+      <footer className="bg-green-800 text-white py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-slate-300">© 2024 Your Name. All rights reserved.</p>
+          <p className="text-slate-50">© 2024 Your Name. All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-6">
-            <a href="https://www.linkedin.com/in/edward-donson/" className="text-slate-300 hover:text-white transition-colors">LinkedIn</a>
-            <a href="https://github.com/edonson2016" className="text-slate-300 hover:text-white transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/edward-donson/" className="text-slate-50 hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://github.com/edonson2016" className="text-slate-50 hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
       </footer>
