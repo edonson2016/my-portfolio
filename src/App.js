@@ -11,6 +11,7 @@ export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false); // controls DOM + CSS
   const [isEdHover, setIsEdHover] = useState(false);
   const [isEdVisible, setIsEdVisible] = useState(false);
+  const [played, setPlayed] = useState(false);
 
   const openPopup = () => {
     setIsVisible(true);
@@ -149,7 +150,14 @@ export default function Portfolio() {
                     </span>
                 </h1>
                 <div className="mt-8 flex space-x-4">
-                  <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors" 
+                  <button
+                    className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                    onClick={() => {
+                      window.location.href =
+                        "mailto:edonson2016@gmail.com";
+                    }}
+                  >Contact Me</button>
+                  {/* <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors" 
                   onClick={openPopup}>
                     Contact Me
                   </button>
@@ -174,7 +182,7 @@ export default function Portfolio() {
                       </button>
                     </div>
                   </div>
-                )}
+                )} */}
                   <a
                     href={`${process.env.PUBLIC_URL}/Edward_Donson_CV.pdf`}
                     target="_blank"
@@ -186,13 +194,36 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div className="flex justify-center">
-                <p className='text-slate-800 font-bold'>
-                  Who am I....?
+              <div className="flex flex-col items-center">
+                <p
+                  className="md:text-3xl font-bold text-slate-800 mb-4 cursor-pointer"
+                  onMouseEnter={() => {
+                    if (!played) setPlayed(true);
+                  }}
+                >
+                  Who am I...
                 </p>
-                {/* <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 shadow-2xl flex items-center justify-center overflow-hidden">
-                  <img src={EdwardPic} alt="Your Name" className="w-full h-full object-cover" />
-                </div> */}
+
+                {/* Typing text */}
+                 <p
+                  className={`
+                    overflow-hidden
+                    transition-all
+                    duration-[2000ms]
+                    ease-out
+                    text-center
+                    ${played ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}
+                  `}
+                >
+                  I am a current{" "}
+                  <span className="font-semibold text-green-700">CS + Math</span>{" "}
+                  undergraduate at Harvey Mudd College, passionate about using{" "}
+                  <span className="font-semibold text-green-700">optimization</span>,{" "}
+                  <span className="font-semibold text-green-700">probability</span>, and{" "}
+                  <span className="font-semibold text-green-700">linear algebra</span>{" "}
+                  to produce secure models and data for an increasingly{" "}
+                  <span className="font-semibold text-green-700">data-centric</span> world.
+                </p>
               </div>
 
             </div>
