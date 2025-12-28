@@ -176,8 +176,9 @@ export default function Portfolio() {
                   </div>
                 )}
                   <a
-                    href="/Edward_Donson_CV.pdf"
-                    download
+                    href={`${process.env.PUBLIC_URL}/Edward_Donson_CV.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-6 py-3 border-2 border-green-300 text-gray-500 rounded-lg hover:border-green-400 transition-colors inline-block"
                   >
                     Download CV
