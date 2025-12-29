@@ -221,7 +221,7 @@ export default function Portfolio() {
                   <span className="font-semibold text-green-700">optimization</span>,{" "}
                   <span className="font-semibold text-green-700">probability</span>, and{" "}
                   <span className="font-semibold text-green-700">linear algebra</span>{" "}
-                  to produce secure models and data for an increasingly{" "}
+                  to produce secure machine learning models and datasets for an increasingly{" "}
                   <span className="font-semibold text-green-700">data-centric</span> world.
                 </p>
               </div>
@@ -305,11 +305,50 @@ export default function Portfolio() {
               <JobCard title="Adversarial Machine Learning Research Intern" 
                 company_name="Center for Artificial Intelligence Security Research, Oak Ridge National Laboratory" 
                 principal_inv = "Dr. Amir Sadovnik" 
-                date="May. 2025– Aug. 2025" 
+                date="May 2025 – Aug. 2025" 
                 location="Oak Ridge, TN"
                 bullets={[' Developed extraction attack methods which leverage finetuned pre-trained vision models to produce transferable evasion attacks for a select target image',
                   'Leveraged hessian analysis and loss surface visualization methods to theoretically validate extraction attack effectiveness, ensuring extraction attacks properly mimic target model loss surfaces']} 
                 skills_used={["PyTorch", "NumPy", "Python"]}
+                color='green' />
+
+              <JobCard title="Data Science Research Intern" 
+                company_name="HADD Research Group, Harvey Mudd College" 
+                principal_inv = "Dr. Jamie Haddock" 
+                date="Jan. 2025 - Present" 
+                location="Claremont, CA"
+                bullets={[' Conduct experiments on the accuracy of sketch-solve methods for non-negative least squares regression',
+                  'Compare existing randomized non-negative least squares regression with sketch-and-solve methods using similarity metrics like Jaccard similarity']} 
+                skills_used={["NumPy", "scikit-learn", "pandas"]}
+                color='green' />
+
+              <JobCard title="LLM Education Research Intern" 
+                company_name="METRICS Lab, Harvey Mudd College" 
+                principal_inv = "Dr. Zachary Dodds" 
+                date="Aug. 2024 - Aug. 2025" 
+                location="Claremont, CA"
+                bullets={['  Interpret hard metrics, like cyclomatic complexity and comment-code percentage, to understand LLM’s effect on student’s code writing habits',
+                  'Developed a Python script to convert and filter .ipynb files to produce compilable python code for static analysis']} 
+                skills_used={["Python", "R"]}
+                color='green' />
+
+              <JobCard title="Machine Learning Research Assistant " 
+                company_name="MolSim Lab, Harvey Mudd College" 
+                principal_inv = "Dr. Sandra Brown" 
+                date="Jan. 2024 - Sep. 2024" 
+                location="Claremont, CA"
+                bullets={['  Developed universal scripts to analyze neural network performance using pandas and NumPy and produce visualizations illustrating neural networks accuracy',
+                  'Trained artificial neural networks to predict molecule’s potential energy using the Atomistic Potential Learning package for three molecules of differing complexity']} 
+                skills_used={["ASE", "pandas"]}
+                color='green' />
+
+              <JobCard title="Computer Science Grader and Tutor " 
+                company_name="Department of Computer Science, Harvey Mudd College" 
+                date="Aug. 2023 - Present" 
+                location="Claremont, CA"
+                bullets={['   Improved student performance and understanding of programming principles, data structures or logic and computability through tutoring sessions attended by up to ˜25 students',
+                  'Collaborated with other graders to provide feedback for classes of up to 200 students, resulting in 100% of assignments having comprehensive feedback and grades']} 
+                skills_used={["Python","Java", "C++"]}
                 color='green' />
             </div>
           </div>
