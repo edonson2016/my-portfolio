@@ -222,7 +222,15 @@ export default function Portfolio() {
                   <span className="font-semibold text-green-700">probability</span>, and{" "}
                   <span className="font-semibold text-green-700">linear algebra</span>{" "}
                   to produce secure machine learning models and datasets for an increasingly{" "}
-                  <span className="font-semibold text-green-700">data-centric</span> world.
+                  <span className="font-semibold text-green-700">data-centric</span> world. 
+                  <div className="h-8"/>
+                  I have experience in developing novel adversarial attacks against computer vision models,
+                  using 
+                  <span className="font-semibold text-green-700"> PyTorch</span> and 
+                  <span className="font-semibold text-green-700"> IBM's Adversarial Robustness Toolkit</span>, 
+                  and conducting experiments in randomized numerical linear algebra using 
+                  <span className="font-semibold text-green-700"> NumPy</span> and 
+                  <span className="font-semibold text-green-700"> SciPy</span>. 
                 </p>
               </div>
 
