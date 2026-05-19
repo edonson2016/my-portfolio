@@ -215,10 +215,10 @@ export default function Portfolio() {
                     ${played ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}
                   `}
                 >
-                  I am a currently commited to pursing a PhD of 
+                  I am a currently commited to pursing a PhD of {" "}
                   <span className="font-semibold text-green-700">Computer and Information Sciences</span>{" "}
-                  at the University of Pennsylvania where I will be advised by Dr. Jacob Gardner.
-                  There I will work on problems spanning 
+                  at the University of Pennsylvania where I will be advised by Dr. Jacob Gardner.{" "}
+                  There I will work on problems spanning {" "}
                   <span className="font-semibold text-green-700">Bayesian Optimization, Agentic Optimization</span>{" "}
                   and the umbrella of <span className="font-semibold text-green-700">AI for Science</span>{" "}
                   to discover new molecules.
