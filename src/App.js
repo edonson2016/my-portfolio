@@ -215,22 +215,23 @@ export default function Portfolio() {
                     ${played ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}
                   `}
                 >
-                  I am a current{" "}
-                  <span className="font-semibold text-green-700">CS + Math</span>{" "}
-                  undergraduate at Harvey Mudd College, passionate about using{" "}
-                  <span className="font-semibold text-green-700">optimization</span>,{" "}
-                  <span className="font-semibold text-green-700">probability</span>, and{" "}
-                  <span className="font-semibold text-green-700">linear algebra</span>{" "}
-                  to produce secure machine learning models and datasets for an increasingly{" "}
-                  <span className="font-semibold text-green-700">data-centric</span> world. 
+                  I am a currently commited to pursing a PhD of 
+                  <span className="font-semibold text-green-700">Computer and Information Sciences</span>{" "}
+                  at the University of Pennsylvania where I will be advised by Dr. Jacob Gardner.
+                  There I will work on problems spanning 
+                  <span className="font-semibold text-green-700">Bayesian Optimization, Agentic Optimization</span>{" "}
+                  and the umbrella of <span className="font-semibold text-green-700">AI for Science</span>{" "}
+                  to discover new molecules.
                   <div className="h-8"/>
-                  I have experience in developing novel adversarial attacks against computer vision models,
-                  using 
-                  <span className="font-semibold text-green-700"> PyTorch</span> and 
-                  <span className="font-semibold text-green-700"> IBM's Adversarial Robustness Toolkit</span>, 
-                  and conducting experiments in randomized numerical linear algebra using 
-                  <span className="font-semibold text-green-700"> NumPy</span> and 
-                  <span className="font-semibold text-green-700"> SciPy</span>. 
+                  Previously, I graduated from Harvey Mudd College with high distinction and a joint degree in{" "}
+                  <span className="font-semibold text-green-700">CS + Math.</span>{" "}
+                  There I served as president of the school's {" "}
+                  <span className="font-semibold text-green-700">INFORMS and SIAM</span>{" "} chapters,
+                  and conducted research in {" "}
+                  <span className="font-semibold text-green-700">operations research</span> for sports analytics, {" "}
+                  <span className="font-semibold text-green-700">randomzied numerical linear algebra</span>, {" "}
+                  <span className="font-semibold text-green-700">adversarial evasion attacks </span> against vision models, {" "}
+                  and <span className="font-semibold text-green-700">computer science education</span>.
                 </p>
               </div>
 
@@ -301,6 +302,14 @@ export default function Portfolio() {
 
             <div className="space-y-8">
               {/* Experience Item */}
+               <JobCard title="Operations Research Intern" 
+                company_name="Mudd OR Group, Harvey Mudd College" 
+                date="Jan. 2026 - May 2026" 
+                location = "Claremont, CA"
+                bullets={[' Develop interactive UI interface for Claremont College swim coaches to validate swim meet line-ups',
+                  'Implement Mixed-Integer Program based model to produce potential NCAA portfolio based on past swimmer performance']} 
+                skills_used={["AMPL", "Gurobi"]}
+                color='green' />
               <JobCard title="Software Engineer" 
                 company_name="Sokil Inc." 
                 date="Aug. 2025 - Present" 
@@ -366,7 +375,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="bg-green-800 text-white py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-slate-50">© 2024 Your Name. All rights reserved.</p>
+          <p className="text-slate-50">© 2026 Edward Donson. All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-6">
             <a href="https://www.linkedin.com/in/edward-donson/" className="text-slate-50 hover:text-white transition-colors">LinkedIn</a>
             <a href="https://github.com/edonson2016" className="text-slate-50 hover:text-white transition-colors">GitHub</a>
